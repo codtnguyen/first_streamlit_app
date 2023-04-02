@@ -49,16 +49,10 @@ my_data_row = my_cur.fetchone()
 streamlit.text("The fruit load list contains: ")
 streamlit.text(my_data_row)
 
-#another fruit select
-try:
-  fruit_select = streamlit.text_input('What fruit would you like to add?')
-  if not fruit_choice:
-    streamlit.error("Please select a fruit to get information.")
-  else:
-    back_from_function = get_fruityvice_data(fruit_select)
-    streamlit.dataframe(back_from_function)
+#Allow the end user to add a fruit to the list
+add_my_fruit = streamlit.text_input('What fruit would you like to add?')
+back_from_function = get_fruityvice_data(add_my_fruit)
+streamlit.dataframe(back_from_function)
 
-except URLError as e:
-  streamlit.error()
 
 
