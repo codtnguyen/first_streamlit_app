@@ -50,7 +50,7 @@ streamlit.text("The fruit load list contains: ")
 streamlit.text(my_data_row)
 
 
-fruit_select = streamlit.text_input('What fruit would you like information about?')
+fruit_select = streamlit.text_input('What fruit would you like to add?')
 display_from_function = get_fruityvice_data(fruit_select)
 streamlit.dataframe(display_from_function)
 
